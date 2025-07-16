@@ -1,0 +1,210 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: var(--transition-smooth);
+  padding: 0.75rem 0; /* Padding azaldıldı */
+  backdrop-filter: var(--blur-effect);
+}
+
+.header.scrolled {
+  background: var(--bg-glass);
+  backdrop-filter: var(--blur-effect);
+  border-bottom: 1px solid var(--glassmorphism-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.header-container {
+  max-width: 1200px; /* Maksimum en azaldıldı */
+  margin: 0 auto;
+  padding: 0 1.5rem; /* Padding azaldıldı */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Gap azaldıldı */
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+.logo:hover {
+  transform: scale(1.02); /* Kiçik böyütmə */
+}
+
+.logo-icon {
+  width: 40px; /* Kiçik ölçü */
+  height: 40px; /* Kiçik ölçü */
+  background: var(--primary-gradient);
+  border-radius: 8px; /* Kiçik radius */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1.25rem; /* Kiçik font ölçüsü */
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+.logo:hover .logo-icon {
+  box-shadow: var(--shadow-md);
+  transform: rotate(3deg); /* Kiçik döndürmə */
+}
+
+.logo-text {
+  font-weight: 800;
+  font-size: 1.25rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Kiçik gap */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  padding: 0.6rem 1.2rem; /* Padding azaldıldı */
+  border-radius: 10px; /* Kiçik radius */
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  font-size: 0.95rem; /* Kiçik font ölçüsü */
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-gradient);
+  transition: var(--transition-smooth);
+  z-index: -1;
+}
+
+.nav-link:hover::before {
+  left: 0;
+}
+
+.nav-link:hover {
+  color: white;
+  transform: translateY(-1px); /* Kiçik hərəkət */
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Kiçik gap */
+}
+
+.language-select {
+  background: var(--bg-glass);
+  border: 1px solid var(--glassmorphism-border);
+  border-radius: 10px; /* Kiçik radius */
+  padding: 0.6rem 0.9rem; /* Padding azaldıldı */
+  color: var(--text-secondary);
+  font-size: 0.85rem; /* Kiçik font ölçüsü */
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  backdrop-filter: var(--blur-effect);
+}
+
+.language-select:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--border-color);
+  transform: translateY(-0.5px); /* Kiçik hərəkət */
+}
+
+.theme-toggle {
+  background: var(--bg-glass);
+  border: 1px solid var(--glassmorphism-border);
+  border-radius: 10px; /* Kiçik radius */
+  padding: 0.6rem; /* Padding azaldıldı */
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: var(--blur-effect);
+}
+
+.theme-toggle svg {
+  width: 18px; /* Kiçik ikon ölçüsü */
+  height: 18px; /* Kiçik ikon ölçüsü */
+}
+
+.theme-toggle:hover {
+  background: var(--accent-gradient);
+  color: white;
+  transform: scale(1.05) rotate(90deg); /* Kiçik transformasiya */
+  box-shadow: var(--shadow-glow);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: var(--bg-glass);
+  border: 1px solid var(--glassmorphism-border);
+  border-radius: 10px; /* Kiçik radius */
+  padding: 0.6rem; /* Padding azaldıldı */
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  backdrop-filter: var(--blur-effect);
+}
+
+.mobile-menu-btn svg {
+  width: 18px; /* Kiçik ikon ölçüsü */
+  height: 18px; /* Kiçik ikon ölçüsü */
+}
+
+.mobile-menu-btn:hover {
+  background: var(--primary-gradient);
+  color: white;
+  transform: scale(1.05); /* Kiçik transformasiya */
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--bg-glass);
+  border: 1px solid var(--glassmorphism-border);
+  border-radius: 0 0 16px 16px; /* Kiçik radius */
+  padding: 1.5rem; /* Padding azaldıldı */
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: var(--blur-effect);
+  opacity: 0;
+  transform: translateY(-15px); /* Kiçik hərəkət */
+  transition: var(--transition-smooth);
+  pointer-events: none;
+}
+
+.mobile-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem; /* Kiçik gap */
+}

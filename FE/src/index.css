@@ -3,3 +3,102 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  /* Daha Canlı, Peşəkar Rənglər (Mavi, Göy, Bənövşəyi, Tünd Boz tonlar) */
+  --primary-color-vibrant: #4D77FF; /* Cəsarətli Elektrik Mavi */
+  --primary-color-deep: #004D99; /* Dərin Tünd Mavi */
+  --secondary-color-vibrant: #8A2BE2; /* Elektrik Bənövşəyi */
+  --secondary-color-deep: #5A1C9C; /* Dərin Tünd Bənövşəyi */
+  --accent-color-vibrant: #00C8FF; /* Parlaq Açıq Mavi (Turkuaz) */
+  --accent-color-deep: #007CA1; /* Dərin Turkuaz */
+  --success-color: #28A745; /* Canlı Yaşıl */
+  --warning-color: #FFC107; /* Canlı Sarı */
+
+  --primary-gradient: linear-gradient(135deg, var(--primary-color-vibrant) 0%, var(--primary-color-deep) 100%);
+  --secondary-gradient: linear-gradient(135deg, var(--secondary-color-vibrant) 0%, var(--secondary-color-deep) 100%);
+  --accent-gradient: linear-gradient(135deg, var(--accent-color-vibrant) 0%, var(--accent-color-deep) 100%);
+  --success-gradient: linear-gradient(135deg, #28A745 0%, #1A7A34 100%);
+  --warning-gradient: linear-gradient(135deg, #FFC107 0%, #E0A800 100%);
+
+  --glassmorphism: rgba(255, 255, 255, 0.1); /* Daha çox şəffaf */
+  --glassmorphism-border: rgba(255, 255, 255, 0.2); /* Daha zəif çərçivə */
+  --blur-effect: blur(10px); /* Normal blur effekti */
+
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Keçidlər optimal sürətdə */
+  --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --transition-elastic: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  transition: var(--transition-smooth);
+  font-size: 0.9rem; /* Ümumi şrift ölçüsü azaldıldı */
+}
+
+/* Light Theme Variables */
+.light {
+  --bg-primary: #f8fbff; /* Çox açıq fon */
+  --bg-secondary: #eef4fb; /* Orta açıq fon */
+  --bg-tertiary: #dae3ec; /* Tünd açıq fon */
+  --bg-card: rgba(255, 255, 255, 0.75); /* Kart fonu daha şəffaf */
+  --bg-glass: rgba(255, 255, 255, 0.2); /* Glass daha çox şəffaf */
+  --text-primary: #2d3748; /* Tünd boz mətn */
+  --text-secondary: #4a5568; /* Orta boz mətn */
+  --text-muted: #718096; /* Açıq boz mətn */
+  --border-color: #d1d9e6;
+  --border-light: #e6eff7;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05); /* Kölgələr azaldıldı */
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 5px 10px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 10px 20px rgba(0, 0, 0, 0.15);
+  --shadow-glow: 0 0 25px rgba(77, 119, 255, 0.3); /* Yeni rənglərə uyğun parlaqlıq */
+}
+
+/* Dark Theme Variables */
+.dark {
+  --bg-primary: #080f25; /* Daha tünd göy fon */
+  --bg-secondary: #0f172a; /* Tünd göy fon */
+  --bg-tertiary: #1a2238; /* Daha açıq tünd fon */
+  --bg-card: rgba(15, 23, 42, 0.75); /* Kart fonu daha şəffaf */
+  --bg-glass: rgba(255, 255, 255, 0.05); /* Glass daha çox şəffaf */
+  --text-primary: #e2e8f0; /* Açıq boz mətn */
+  --text-secondary: #cbd5e0; /* Orta boz mətn */
+  --text-muted: #a0aec0; /* Tünd boz mətn */
+  --border-color: #2e3a50;
+  --border-light: #404f67;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 5px 10px rgba(0, 0, 0, 0.25);
+  --shadow-xl: 0 10px 20px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 25px rgba(77, 119, 255, 0.3); /* Yeni rənglərə uyğun parlaqlıq */
+}
+
+html {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  scroll-padding-top: 60px; /* Header hündürlüyünə uyğunlaşdırıldı */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px; /* Kiçik ölçü */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-gradient);
+  border-radius: 3px; /* Kiçik radius */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-gradient);
+}

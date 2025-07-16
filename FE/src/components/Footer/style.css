@@ -1,0 +1,70 @@
+.footer {
+  background: var(--bg-secondary);
+  padding: 2rem 1.5rem; /* Azaldıldı */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      circle at 30% 50%,
+      rgba(77, 119, 255, 0.05) 0%, /* Daha canlı */
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 70% 50%,
+      rgba(138, 43, 226, 0.05) 0%, /* Daha canlı */
+      transparent 50%
+    );
+}
+
+.footer-container {
+  max-width: 1200px; /* Azaldıldı */
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* Azaldıldı */
+  margin-bottom: 1.5rem; /* Azaldıldı */
+}
+
+.footer-logo-icon {
+  width: 35px; /* Azaldıldı */
+  height: 35px; /* Azaldıldı */
+  background: var(--primary-gradient);
+  border-radius: 8px; /* Azaldıldı */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem; /* Azaldıldı */
+  box-shadow: var(--shadow-sm);
+}
+
+.footer-logo-text {
+  font-weight: 800;
+  font-size: 1.1rem; /* Azaldıldı */
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-text {
+  color: var(--text-muted);
+  font-size: 0.8rem; /* Azaldıldı */
+  font-weight: 500;
+}
